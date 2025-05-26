@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Mental Health Chatbot</title>
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="heading">
+        <h1>Meya.ai</h1>
+        <p>Your personal assistant for all your queries!</p>
+    </div>
+    <div class="chat-container">
+        <!-- Chatbox where messages will be displayed -->
+        <div id="chatbox" class="chatbox">
+        </div>
+        <!-- Input field for user to type a message -->
+        <input type="text" id="user_input" placeholder="Type a message..." />
+        <!-- Button to send the message -->
+        <button id="user_input" onclick="sendMessage()">Send</button>
+    </div>
+
+    <!-- Link to the JavaScript file -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
