@@ -4,7 +4,7 @@
 
 ---
 
-![Cognia Chatbot Screenshot](./assets/screenshot-441.png)
+![Chatbot Screenshot](./screenshot-441.png)
 
 ## 🌟 Features
 
