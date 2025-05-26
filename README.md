@@ -4,6 +4,8 @@
 
 ---
 
+![Cognia Chatbot Screenshot](./assets/screenshot-441.png)
+
 ## 🌟 Features
 
 * 💬 **Conversational Interface**: Natural chat-like interaction between the user and the bot.
