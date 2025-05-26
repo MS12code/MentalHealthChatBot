@@ -22,7 +22,6 @@
 | Backend  | Python (Flask)                              |
 | Database | SQLite                                      |
 | Server   | Flask development server                    |
-| Others   | AJAX (for chat requests), jQuery (optional) |
 
 ---
 
