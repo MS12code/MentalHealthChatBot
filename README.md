@@ -4,7 +4,7 @@
 
 ---
 
-![Chatbot Screenshot](Screenshot (441).png)
+![Chatbot Screenshot](Screenshot(441).png)
 
 ## 🌟 Features
 
