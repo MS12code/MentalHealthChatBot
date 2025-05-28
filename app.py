@@ -1,19 +1,28 @@
 from flask import Flask, render_template, request, jsonify
 import nltk
 from nltk.chat.util import Chat, reflections
+from flask_cors import CORS
 
 # Initialize Flask app
 app = Flask(__name__)
 
+# Enable CORS for a specific domain
+CORS(app,
+     origins=[
+         "https://ms12code.github.io/MentalHealthChatBot",
+         "https://ms12code.github.io"
+     ])
+
 # Define a simple pair of user input and chatbot response
 pairs = [
-    (r"(?i)hi|hello|hey", ["Hello! I'm here for you. How are you feeling today?"]),
-    (r"(?i)how are you\??", ["I'm here and ready to support you. How about you?"]),
+    (r"(?i)hi|hello|hey",
+     ["Hello! I'm here for you. How are you feeling today?"]),
+    (r"(?i)how are you\??",
+     ["I'm here and ready to support you. How about you?"]),
     (r"(?i)i am (sad|upset|depressed|not okay)", [
         "I'm really sorry to hear that. Would you like to talk about what's been bothering you?",
         "You're not alone. I'm here to listen. What's on your mind?"
     ]),
-
     (r"(?i)i feel (lonely|alone|sad|depress)", [
         "It can be really tough feeling that way. Want to share more with me?",
         "I'm here with you now. You don’t have to go through this alone."
@@ -26,7 +35,8 @@ pairs = [
         "I'm here to support you. What's on your mind?",
         "You’re doing the right thing by reaching out. How can I support you today?"
     ]),
-    (r"(?i)no", ["That's okay. I'm always here if you feel like talking later."]),
+    (r"(?i)no",
+     ["That's okay. I'm always here if you feel like talking later."]),
     (r"(?i)yes", ["Great! Please go ahead. I'm listening."]),
     (r"(?i)bye|goodbye|see you", [
         "Take care! Remember, you're not alone.",
@@ -46,29 +56,32 @@ pairs = [
     ]),
 ]
 
-
 # Create the chatbot using the pairs defined above
 chatbot = Chat(pairs, reflections)
+
 
 # Define a route for the homepage
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return jsonify({'hello': 'world'})
+
 
 # Define a route to get chatbot responses
 @app.route("/get_response", methods=["POST"])
 def get_response():
     user_input = request.form.get('user_input', '').strip()
-    
+
     if not user_input:
-        return jsonify({'response': "I didn't catch that. Could you please repeat?"})
-    
+        return jsonify(
+            {'response': "I didn't catch that. Could you please repeat?"})
+
     response = chatbot.respond(user_input)
-    
+
     if not response:
         response = "I'm not sure how to respond to that. Can you rephrase?"
-    
+
     return jsonify({'response': response})
+
 
 # Run the app
 if __name__ == "__main__":
