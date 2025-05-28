@@ -60,7 +60,7 @@ function sendMessage() {
   }, 300);
 
   // Send user input to backend
-  fetch('/get_response', {
+  fetch('https://a9456527-74f0-4628-9279-a7cde36dbf11-00-1c7cl014p3mgu.riker.replit.dev/get_response', {
       method: 'POST',
       body: new URLSearchParams({ 'user_input': userInput }),
       headers: {
