@@ -2,15 +2,6 @@ from flask import Flask, render_template, request, jsonify
 import nltk
 from nltk.chat.util import Chat, reflections
 from flask_cors import CORS
-import sqlite3
-
-conn = sqlite3.connect("history.sqlite", check_same_thread=False)
-conn.execute("""CREATE TABLE IF NOT EXISTS chat_history (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    user_message TEXT,
-    bot_response TEXT,
-    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
-)""")
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -88,10 +79,7 @@ def get_response():
 
     if not response:
         response = "I'm not sure how to respond to that. Can you rephrase?"
-     
-    conn.execute("INSERT INTO chat_history (user_message, bot_response) VALUES (?, ?)", (user_input, response))
-    conn.commit()
-
+    
     return jsonify({'response': response})
 
 
@@ -101,3 +89,4 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))  # default 5000 for local dev
 
     app.run(host="0.0.0.0", port=port)
+
