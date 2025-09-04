@@ -9,7 +9,6 @@
 ## 🌟 Features
 
 * 💬 **Conversational Interface**: Natural chat-like interaction between the user and the bot.
-* 📁 **Chat History**: Stores conversation logs in a local SQLite database.
 * 🌐 **Web-Based UI**: Clean, responsive interface for accessibility and ease of use.
 * ⚙️ **Simple Deployment**: Run locally with minimal setup.
 * 🧠 **Empathetic Responses**: Provides supportive and non-judgmental responses to user input.
@@ -21,8 +20,7 @@
 | Layer    | Technology                                  |
 | -------- | ------------------------------------------- |
 | Frontend | HTML, CSS, JavaScript (vanilla)             |
-| Backend  | Python (Flask)                              |
-| Database | SQLite                                      |
+| Backend  | Python (Flask)                              |                                  |
 | Server   | Flask development server                    |
 
 ---
@@ -78,7 +76,6 @@ Visit `http://127.0.0.1:5000/` in your browser to start chatting with Cognia.
 MentalHealthChatBot/
 │
 ├── app.py                  # Main Flask application
-├── history.sqlite          # SQLite database storing chat history
 ├── templates/
 │   └── index.html          # Main HTML page
 │
