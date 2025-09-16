@@ -1,6 +1,6 @@
 # 🧠 Cognia – A Mental Health ChatBot
 
-**Cognia** is an AI-powered mental health chatbot designed to provide a supportive space for individuals to express their feelings and thoughts. It facilitates basic mental health conversations using natural language processing in a simple, user-friendly web interface. Cognia is not a substitute for professional therapy but aims to encourage self-expression and reduce the stigma around mental health.
+**Cognia** is a mental health chatbot designed to provide a supportive space for individuals to express their feelings and thoughts. It facilitates basic mental health conversations using natural language processing in a simple, user-friendly web interface. Cognia is not a substitute for professional therapy but aims to encourage self-expression and reduce the stigma around mental health.
 
 ---
 
